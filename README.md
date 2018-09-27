@@ -8,7 +8,7 @@
 
 # h2ospawner #
 
-A derived class from systemdspawner which spawning h2o flow.
+A derived class from [systemdspawner](https://github.com/jupyterhub/systemdspawner) which spawning h2o flow.
 
 reference : https://github.com/c2j/h2ospawner/
 
