@@ -24,10 +24,10 @@ same as systemdspawner
 
 ## Installation ##
 
-You can install it from PyPI with:
+You can install it from src with:
 
 ```bash
-pip install h2ospawner
+pip install h2ospawner.zip
 ```
 
 You can enable it for your jupyterhub with the following lines in your
