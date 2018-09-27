@@ -9,6 +9,7 @@
 # h2ospawner #
 
 A derived class from systemdspawner which spawning h2o flow.
+
 reference : https://github.com/c2j/h2ospawner/
 
 ## Features ##
@@ -40,13 +41,15 @@ c.JupyterHub.spawner_class = 'h2ospawner.H2OSpawner'
 
 Modify `jupyterhub_config.py` file:
 
-c.JupyterHub.spawner_class = 'h2ospawner.H2OSpawner'
+```python
 c.Spawner.cmd = ['/[somewhere]/h2o.sh', '/[somewhere]/h2o.jar']
+```
 
-for preventing slow init of h2o, maybe you should also set timeout:
+In order to avoid slow init of h2o which leads to a timeout err, maybe you should also set timeout a larger value:
 
+```python
 c.Spawner.http_timeout = 300  # default value 30
-
+```
 
 ## Getting help ##
 
