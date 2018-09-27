@@ -8,7 +8,7 @@
 
 # h2ospawner #
 
-A systemdspawner subclass which spawning h2o flow.
+A derived class from systemdspawner which spawning h2o flow.
 
 ## Features ##
 
