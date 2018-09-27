@@ -67,7 +67,7 @@ All code is licensed under the terms of the revised BSD license.
 
 #### JupyterHub and systemdspawner
 
-- [Reporting Issues](https://github.com/jupyterhub/systemdspawner/issues)
+- [Reporting Issues](https://github.com/ycysuk/h2ospawner/issues)
 - [Documentation for JupyterHub](http://jupyterhub.readthedocs.io/en/latest/) | [PDF (latest)](https://media.readthedocs.org/pdf/jupyterhub/latest/jupyterhub.pdf) | [PDF (stable)](https://media.readthedocs.org/pdf/jupyterhub/stable/jupyterhub.pdf)
 - [Documentation for JupyterHub's REST API](http://petstore.swagger.io/?url=https://raw.githubusercontent.com/jupyter/jupyterhub/master/docs/rest-api.yml#/default)
 
