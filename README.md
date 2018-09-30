@@ -64,6 +64,58 @@ In order to avoid slow init of h2o which leads to a timeout err, maybe you shoul
 c.Spawner.http_timeout = 300  # default value 30
 ```
 
+h2o.sh
+
+```
+#!/bin/bash
+options=$(getopt -q -o hi:p:c:n:x: --long help,ip:,port:,context_path:,nthreads:,Xmx: -- "$@")
+eval set -- "$options"
+while true; do
+    case "$1" in
+    -h|--help)
+        echo "a java wrapper for h2o.jar"
+        ;;
+    -i|--ip)
+        shift; # The arg is next in position args
+        OPT_IP="-ip $1"
+        ;;
+    -p|--port)
+        shift;
+        OPT_PORT="-port $1"
+        ;;
+    -c|--context_path)
+        shift;
+        OPT_PATH="-context_path $1"
+        ;;
+    -n|--nthreads)
+        shift;
+        OPT_NTHREADS="-nthreads $1"
+        ;;
+    -x|--Xmx)
+        shift; # e.g. -Xmx1g
+        JVM_OPT_XMX="-Xmx$1"
+        ;;
+    --)
+        shift;
+        break
+        ;;
+    *)
+        echo "$1 is not an option"
+        ;;
+    esac
+    shift
+done
+
+for param in "$@"
+do
+    JAR_PATH="$1"
+    break
+done
+
+# The arguments use the following format: java <JVM Options> -jar h2o.jar <H2O Options>.
+java $JVM_OPT_XMX -jar $JAR_PATH $OPT_IP $OPT_PORT $OPT_PATH $OPT_NTHREADS
+```
+
 ## Getting help ##
 
 We encourage you to ask questions on the [mailing list](https://groups.google.com/forum/#!forum/jupyter).
