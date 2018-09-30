@@ -19,13 +19,13 @@ spawning h2o flow.
 This simple project do 2 things:
 
 1. override *get_args()*, add param so that the url matches
-'''
+```
 '--context_path=/user/%s' % self.user.name
-'''
+```
 2. write a java wrapper which using *getopt* to convert args style
-'''
+```
 --arg=val  -->  -arg val
-'''
+```
 
 ## Requirements ##
 
